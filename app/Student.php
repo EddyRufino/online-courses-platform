@@ -6,5 +6,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class Student extends Model
 {
-    //
+    public function courses()
+    {
+    	return $this->belongToMany(Course::class);
+    }
+
+    public function user()
+    {
+    	return $this->belongTo(User::class)->select('id', 'role_id', 'name', 'email');
+    }
 }
