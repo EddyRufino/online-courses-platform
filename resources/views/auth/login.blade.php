@@ -68,6 +68,9 @@
                 </div>
             </div>
         </div>
+
+        @include('partials.auth.socialLogin')
+
     </div>
 </div>
 @endsection
