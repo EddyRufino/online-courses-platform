@@ -19,7 +19,7 @@
                 <!-- Right Side Of Navbar -->
                 <ul class="navbar-nav ml-auto">
 
-                    {{-- @include('partials.navigations.' . \App\User::navigation()) --}}
+                    @include('partials.navigations.' . \App\User::navigation())
 
                     <li class="nav-item dropdown">
                         <a
