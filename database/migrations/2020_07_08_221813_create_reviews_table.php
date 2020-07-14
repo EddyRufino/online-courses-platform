@@ -17,7 +17,7 @@ class CreateReviewsTable extends Migration
             $table->increments('id');
             $table->unsignedInteger('course_id');
             $table->unsignedInteger('user_id');
-            $table->float('rating', 2);
+            $table->integer('rating');
             $table->mediumText('comment')->nullable();
             $table->timestamps();
 

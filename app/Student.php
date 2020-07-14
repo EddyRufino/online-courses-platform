@@ -10,11 +10,11 @@ class Student extends Model
 
     public function courses()
     {
-    	return $this->belongToMany(Course::class);
+    	return $this->belongsToMany(Course::class);
     }
 
     public function user()
     {
-    	return $this->belongTo(User::class)->select('id', 'role_id', 'name', 'email');
+    	return $this->belongsTo(User::class)->select('id', 'role_id', 'name', 'email');
     }
 }

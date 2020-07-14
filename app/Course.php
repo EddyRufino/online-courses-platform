@@ -10,9 +10,14 @@ class Course extends Model
     const PENDING = 2;
     const REJECTED = 3;
 
+    public function pathAttachment()
+    {
+        return '/images/courses/' . $this->picture;
+    }
+
     public function category()
     {
-    	return $this->belongTo(Category::class);
+    	return $this->belongsTo(Category::class);
     }
 
     public function goals()
@@ -22,7 +27,7 @@ class Course extends Model
 
     public function level()
     {
-    	return $this->belongTo(Level::class);
+    	return $this->belongsTo(Level::class);
     }
 
     public function reviews()
@@ -37,11 +42,16 @@ class Course extends Model
 
     public function students()
     {
-    	return $this->belongToMany(Student::class);
+    	return $this->belongsToMany(Student::class);
     }
 
     public function teacher()
     {
-    	return $this->belongTo(Teacher::class);
+    	return $this->belongsTo(Teacher::class);
+    }
+
+    public function getCustomRatingAttribute()
+    {
+        return $this->reviews->avg('rating');
     }
 }

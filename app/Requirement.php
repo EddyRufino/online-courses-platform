@@ -8,6 +8,6 @@ class Requirement extends Model
 {
     public function course()
     {
-    	return $this->belongTo(Course::class);
+    	return $this->belongsTo(Course::class);
     }
 }
