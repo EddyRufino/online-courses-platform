@@ -13,7 +13,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@index')->name('home');
 
 Route::get('/images/{path}/{attachment}', function($path, $attachment) {
 	$file = sprintf('storage/%s/%s', $path, $attachment);
