@@ -46,7 +46,7 @@ class CreateUsersTable extends Migration
             $table->foreign('role_id')->references('id')->on('roles');
         });
 
-        Schema::create('suscriptions', function (Blueprint $table) {
+        Schema::create('subscriptions', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('user_id');
             $table->string('name');
@@ -80,7 +80,7 @@ class CreateUsersTable extends Migration
     {
         Schema::dropIfExists('users');
         Schema::dropIfExists('roles');
-        Schema::dropIfExists('suscriptions');
+        Schema::dropIfExists('subscriptions');
         Schema::dropIfExists('user_social_accounts');
     }
 }

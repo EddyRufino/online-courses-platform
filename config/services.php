@@ -30,6 +30,12 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
 
+    'stripe' => [
+        'model' => App\User::class,
+        'key' => env('STRIPE_KEY'),
+        'secret' => env('STRIPE_SECRET'),
+    ],
+
     'github' => [
         'client_id' => env('GITHUB_CLIENT_ID'),
         'client_secret' => env('GITHUB_CLIENT_SECRET'),
